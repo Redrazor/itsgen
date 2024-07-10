@@ -1,7 +1,7 @@
 const { SlashCommandBuilder } = require('discord.js')
 const d20 = require ('d20')
 
-const missions = [
+const missions15 = [
     'ACQUISITION',
     'B-PONG',
     'BIOTECHVORE',
@@ -30,6 +30,6 @@ data: new SlashCommandBuilder()
         .setDescription('Generates a random ITS Mission for the current Season'),
     async execute(interaction) {
         let roll = d20.roll(20)
-        await interaction.reply(missions[roll-1])
+        await interaction.reply(missions15[roll-1])
     }
 }
