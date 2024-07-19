@@ -122,7 +122,7 @@ player).\r\n
         qaz: 'none',
         jointCMD: false,
         specialUnit: 'none',
-        soecialOrder: 'none',
+        specialOrder: 'none',
         specialistBonus: 'none'
     },
     {
