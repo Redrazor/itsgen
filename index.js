@@ -59,7 +59,7 @@ client.login(token)
 //Setup an Http server to run paralel to the client
 const express = require('express')
 const app = express()
-const port = 3000
+const port = 10000
 
 app.get('/healthcheck', (req, res) => {
   res.send('Still here')
