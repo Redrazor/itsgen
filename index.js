@@ -56,3 +56,15 @@ client.on(Events.InteractionCreate, async interaction => {
 
 client.login(token)
 
+//Setup an Http server to run paralel to the client
+const express = require('express')
+const app = express()
+const port = 3000
+
+app.get('/healthcheck', (req, res) => {
+  res.send('Still here')
+})
+
+app.listen(port, () => {
+  console.log(`Listening on port ${port}`)
+})
