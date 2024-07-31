@@ -257,8 +257,8 @@ the Panoplies than the adversary (1 OP)\r\n`,
         exclusionZone: false,
         qaz: 'none',
         jointCMD: false,
-        specialUnit: 'UberHacker',
-        specialOrder: 'Huberhacker - Irregular',
+        specialUnit: 'Überhacker',
+        specialOrder: 'Überhacker - Irregular',
         specialistBonus: 'Hacker'
     },
     {
