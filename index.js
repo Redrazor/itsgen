@@ -62,7 +62,8 @@ const app = express()
 const port = 10000
 
 app.get('/healthcheck', (req, res) => {
-  res.status(200)
+    res.status(200)
+    res.send()
 })
 
 app.listen(port, () => {
