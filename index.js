@@ -54,6 +54,7 @@ client.on(Events.InteractionCreate, async interaction => {
     }
 })
 
+console.log('TOKEN', process.env.token)
 client.login(process.env.token)
 
 //Setup an Http server to run paralel to the client
