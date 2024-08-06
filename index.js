@@ -1,7 +1,7 @@
 const fs = require('node:fs')
 const path = require('node:path')
 const { Client, Events, GatewayIntentBits, Collection } = require('discord.js')
-const { token } = require('./config.json')
+//const { token } = require('./config.json')
 const d20 = require ('d20')
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] })
@@ -54,7 +54,7 @@ client.on(Events.InteractionCreate, async interaction => {
     }
 })
 
-client.login(token)
+client.login(process.env.token)
 
 //Setup an Http server to run paralel to the client
 const express = require('express')
