@@ -10,17 +10,18 @@ data: new SlashCommandBuilder()
             option.setName('mission')
                   .setDescription('The name of the mission')
                   .setAutocomplete(true)
-                  .setRequired(true)
         ),
     async autocomplete(interaction) {
+        console.log('inside autocomplete')
         let choices = missions
         console.log('choices', choices)
-        let mission = interaction.options.getFocused(true)
+        let mission = interaction.options.getFocused()
         console.log('focused mission', mission)
         const filtered = choices.filter(choice => choice.startsWith(mission.value))
         console.log('filtered', filtered)
         await interaction.respond(
-            filtered.map(choice => ({ name: choice, value: choice})))
+            filtered.map(choice => ({ name: choice, value: choice}))
+        )
     },
     async execute(interaction) {
         selectedMissions = []
