@@ -32,7 +32,7 @@ data: new SlashCommandBuilder()
         let mNumber = missions.indexOf(mission)
         let missionData = objectives.filter(objective => objective.id == mNumber+1)[0]
         console.log('mission by name data', missionData)
-        let response = `MISSION: ${missions[mission-1]} [${mission}]\n`
+        let response = `MISSION: ${mission} [${mNumber+1}]\n`
         if(missionData.dz !== 'Special'){
             response += `Zone of Deployment is: ${missionData.dz} deep\n`
         } else {
