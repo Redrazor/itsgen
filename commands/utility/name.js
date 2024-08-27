@@ -7,25 +7,27 @@ data: new SlashCommandBuilder()
         .setName('itsname')
         .setDescription('Generates a mission description of objectives and aditional information given a name')
         .addStringOption(option => 
-            option.setName('mission')
+            option.setName('name')
                   .setDescription('The name of the mission')
                   .setAutocomplete(true)
         ),
     async autocomplete(interaction) {
         console.log('inside autocomplete')
-        let choices = missions.map(mission => ({ name: mission, value: mission}))
+        console.log(missions)
+        let choices = missions
         console.log('choices', choices)
         let mission = interaction.options.getFocused()
         console.log('focused mission', mission)
-        const filtered = choices.filter(choice => choice.startsWith(mission.value))
+        const filtered = choices.filter(choice => choice.startsWith(mission))
         console.log('filtered', filtered)
         await interaction.respond(
             filtered.map(choice => ({ name: choice, value: choice}))
         )
     },
     async execute(interaction) {
+        console.log('getting', interaction.options.get('name'))
         selectedMissions = []
-        let mission = interaction.options.get('mission').value
+        let mission = interaction.options.get('name').value
         let mNumber = missions.indexOf(missions)
         let missionData = objectives.filter(objective => objective.id == mNumber+1)[0]
         console.log('mission by name data', missionData)
