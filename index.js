@@ -33,9 +33,7 @@ client.once(Events.ClientReady, readyClient => {
 })
 
 client.on(Events.InteractionCreate, async interaction => {
-    if(!interaction.isChatInputCommand()){
-        return
-    }else if(interaction.isChatInputCommand()){
+     if(interaction.isChatInputCommand()){
         const command = interaction.client.commands.get(interaction.commandName)
 
         if(!command) {
@@ -66,6 +64,9 @@ client.on(Events.InteractionCreate, async interaction => {
 		} catch (error) {
 			console.error(error);
 		}
+    } else {
+        //Its no chat Input or autocomplete, return
+        return
     }
 })
 
