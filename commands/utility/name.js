@@ -17,7 +17,7 @@ data: new SlashCommandBuilder()
         let mission = interaction.options.getFocused(true)
         const filtered = choices.filter(choice => choice.startsWith(mission.value))
         await interaction.respond(
-            filtered.map(choice => ({ name: choice, value: choice})
+            filtered.map(choice => ({ name: choice, value: choice})))
     },
     async execute(interaction) {
         selectedMissions = []
