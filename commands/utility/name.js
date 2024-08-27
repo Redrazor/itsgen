@@ -29,7 +29,9 @@ data: new SlashCommandBuilder()
     async execute(interaction) {
         console.log('getting', interaction.options.get('name'))
         selectedMissions = []
-        let mission = interaction.options.get('name').value
+        if(interaction.options.get('name').value === undefined) return
+
+        let mission = interaction.options.get('name').value 
         console.log('mission', mission)
         let mNumber = missions.indexOf(mission)
         let missionData = objectives.filter(objective => objective.id == mNumber+1)[0]
