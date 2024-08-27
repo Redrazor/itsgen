@@ -10,6 +10,7 @@ data: new SlashCommandBuilder()
             option.setName('name')
                   .setDescription('The name of the mission')
                   .setRequired(true)
+                  .setMinLength(5)
                   .setAutocomplete(true)
         ),
     async autocomplete(interaction) {
