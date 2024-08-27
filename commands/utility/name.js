@@ -28,7 +28,8 @@ data: new SlashCommandBuilder()
         console.log('getting', interaction.options.get('name'))
         selectedMissions = []
         let mission = interaction.options.get('name').value
-        let mNumber = missions.indexOf(missions)
+        console.log('mission', mission)
+        let mNumber = missions.indexOf(mission)
         let missionData = objectives.filter(objective => objective.id == mNumber+1)[0]
         console.log('mission by name data', missionData)
         let response = `MISSION: ${missions[mission-1]} [${mission}]\n`
