@@ -13,7 +13,7 @@ data: new SlashCommandBuilder()
         ),
     async autocomplete(interaction) {
         console.log('inside autocomplete')
-        let choices = missions
+        let choices = missions.map(mission => ({ name: mission, value: mission}))
         console.log('choices', choices)
         let mission = interaction.options.getFocused()
         console.log('focused mission', mission)
